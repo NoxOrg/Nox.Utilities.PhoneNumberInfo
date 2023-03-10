@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>Nox.Utilities.PhoneNumberInfo</PackageId>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <FileVersion>1.0.1.0</FileVersion>
+        <PackageVersion>1.0.1</PackageVersion>
+        <Authors>Andre Sharpe, Jan Schutte</Authors>
+        <Company>The Nox Factory</Company>
+        <Copyright>Copyright (c) Andre Sharpe 2023</Copyright>
+        <PackageProjectUrl>https://github.com/NoxOrg/Nox.Utilities.PhoneNumberInfo</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/NoxOrg/Nox.Utilities.PhoneNumberInfo.git</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>nox.png</PackageIcon>
+        <Description>Phone number info utilities</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="libphonenumber-csharp" Version="8.13.7" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\docs\images\nox.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+</Project>
