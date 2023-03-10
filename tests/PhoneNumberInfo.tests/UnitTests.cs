@@ -5,7 +5,7 @@ namespace PhoneNumberInfo.tests;
 
 public class Tests
 {
-    private readonly JsonSerializerOptions _options = new JsonSerializerOptions
+    private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
     {
         WriteIndented = true,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -17,7 +17,7 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void Test_GetPhoneInfo_WithKnownSouthAfricanMobileNumber_ReturnsInfo()
     {
         var info = "833770694".GetPhoneInfo("ZA");
 
@@ -31,5 +31,7 @@ public class Tests
         Assert.That(info.RegionCode, Is.EqualTo("ZA"));
         Assert.That(info.RegionName, Is.EqualTo("South Africa"));
         Assert.That(info.CarrierName, Is.EqualTo("MTN"));
+    
+        Assert.Pass(JsonSerializer.Serialize(info,_jsonOptions));
     }
 }
