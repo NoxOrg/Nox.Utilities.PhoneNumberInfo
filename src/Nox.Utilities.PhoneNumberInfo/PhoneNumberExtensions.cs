@@ -9,16 +9,16 @@ public static partial class PhoneNumberExtensions
 
     private static readonly PhoneNumberOfflineGeocoder _geoCoder = PhoneNumbers.PhoneNumberOfflineGeocoder.GetInstance();
 
-    public static PhoneNumberInfo GetPhoneInfo(this string inputNumber, string? region = null)
+    public static PhoneNumberInfo GetPhoneNumberInfo(this string inputNumber, string? region = null)
     {
         var phoneNumber = _phoneUtil.Parse(inputNumber, region);
 
-        var phoneInfo = new PhoneNumberInfo();
+        PhoneNumberInfo phoneInfo = new()
+        {
+            InputNumber = inputNumber,
+            IsValid = _phoneUtil.IsValidNumber(phoneNumber)
+        };
 
-        phoneInfo.InputNumber = inputNumber;
-
-        phoneInfo.IsValid = _phoneUtil.IsValidNumber(phoneNumber);
-        
         if (phoneInfo.IsValid)
         {
             phoneInfo.FormattedNumber = _phoneUtil.Format(phoneNumber, PhoneNumberFormat.E164);

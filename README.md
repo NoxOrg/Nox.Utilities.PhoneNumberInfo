@@ -5,7 +5,7 @@ Validate and format phone numbers
 using System.Text.Json;
 using Nox.Utilities.PhoneNumberInfo;
 
-PhoneNumberInfo info = "833770694".GetPhoneInfo("ZA"); 
+PhoneNumberInfo info = "833770694".GetPhoneNumberInfo("ZA"); 
 
 var options = new JsonSerializerOptions
     {
